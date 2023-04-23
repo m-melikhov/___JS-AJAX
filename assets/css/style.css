@@ -1,0 +1,103 @@
+/*
+essential styles:
+these make the slideshow work
+*/
+
+body {
+  margin: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.slides {
+  position: relative;
+  height: 150px;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  opacity: 0;
+  z-index: -999;
+  transition: opacity 0.25s;
+}
+
+.active {
+  opacity: 1;
+  z-index: 0;
+}
+
+/*
+non-essential styles:
+just for appearance; change whatever you want
+*/
+
+.slide {
+  font-size: 40px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #333;
+  color: #fff;
+}
+
+.slide:nth-of-type(1) {
+  background: red;
+}
+
+.slide:nth-of-type(2) {
+  background: orange;
+}
+
+.slide:nth-of-type(3) {
+  background: green;
+}
+
+.slide:nth-of-type(4) {
+  background: blue;
+}
+
+.slide:nth-of-type(5) {
+  background: purple;
+}
+
+/* Custom bloks */
+.slides {
+  margin-bottom: 20px;
+}
+
+.indicators,
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.indicator,
+.control {
+  padding: 0.25em 0.5em;
+  background-color: #cccccc;
+  min-width: 70px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  border-radius: 7px;
+  border: 2px solid #aaaaaa;
+  font-size: 24px;
+}
+
+.indicator.active,
+.indicator:active,
+.control:active {
+  background-color: tomato;
+  border-color: darkred;
+  color: white;
+}
